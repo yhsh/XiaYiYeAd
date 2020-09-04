@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvStoneGive"
+    android:layout_width="110dp"
+    android:layout_height="45dp"
+    android:background="@drawable/shape_stone_bg"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/pbPlayProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="67dp"
+        android:layout_height="3dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="2dp"
+        android:max="100"
+        android:progress="30"
+        android:progressDrawable="@drawable/get_gift_progress" />
+
+    <TextView
+        android:id="@+id/tvShowProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="4dp"
+        android:layout_toRightOf="@id/pbPlayProgress"
+        android:text="3/10"
+        android:textColor="#333333"
+        android:textSize="9sp" />
+
+    <TextView
+        android:id="@+id/tvShowGift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pbPlayProgress"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="5dp"
+        android:drawableLeft="@mipmap/icon_stone_left"
+        android:drawablePadding="5dp"
+        android:text="+5原力/1天"
+        android:textColor="#333333"
+        android:textSize="10sp" />
+</RelativeLayout>

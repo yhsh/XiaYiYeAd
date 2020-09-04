@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/frameLayout"
+        android:layout_alignRight="@id/frameLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_close_bg"
+        android:onClick="closeMySelf"
+        android:padding="5dp"
+        android:src="@drawable/ic_close_black_24dp"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:indeterminateDrawable="@drawable/get_gift_progress"
+        tools:max="100"
+        tools:progress="18"
+        tools:secondaryProgress="80" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/tvStoneGive"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="115dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/shape_stone_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:textColor="@android:color/holo_red_light">
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:indeterminateDrawable="@drawable/get_gift_progress"
+            android:max="100"
+            android:progress="18"
+            android:secondaryProgress="80" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_stone_left"
+            android:drawablePadding="10dp"
+            android:text="+5原力/1天"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</RelativeLayout>
