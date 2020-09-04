@@ -109,27 +109,6 @@ public class RewardVideoActivity extends Activity {
                     .build();
         }
 
-        //开始播放广告
-        if (mttRewardVideoAd != null && mIsLoaded) {
-            //step6:在获取到广告后展示,强烈建议在onRewardVideoCached回调后，展示广告，提升播放体验
-            //该方法直接展示广告
-//                    mttRewardVideoAd.showRewardVideoAd(RewardVideoActivity.this);
-            //展示广告，并传入广告展示的场景
-            mttRewardVideoAd.showRewardVideoAd(RewardVideoActivity.this, TTAdConstant.RitScenes.CUSTOMIZE_SCENES, "scenes_test");
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Log.i("kk", ActivityManager.getInstance().getCurrentActivity().getComponentName().getClassName() + "pppp");
-                    addViewToContent(ActivityManager.getInstance().getCurrentActivity());
-                }
-            }, 300);
-
-            mttRewardVideoAd = null;
-        } else {
-            Toast.makeText(RewardVideoActivity.this, "请先加载广告", Toast.LENGTH_LONG).show();
-        }
-
         //step5:请求广告
         mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
             @Override
@@ -144,6 +123,26 @@ public class RewardVideoActivity extends Activity {
                 Log.e(TAG, "Callback --> onRewardVideoCached");
                 mIsLoaded = true;
                 Toast.makeText(RewardVideoActivity.this, "Callback --> rewardVideoAd video cached", Toast.LENGTH_LONG).show();
+                //开始播放广告
+                if (mttRewardVideoAd != null && mIsLoaded) {
+                    //step6:在获取到广告后展示,强烈建议在onRewardVideoCached回调后，展示广告，提升播放体验
+                    //该方法直接展示广告
+//                    mttRewardVideoAd.showRewardVideoAd(RewardVideoActivity.this);
+                    //展示广告，并传入广告展示的场景
+                    mttRewardVideoAd.showRewardVideoAd(RewardVideoActivity.this, TTAdConstant.RitScenes.CUSTOMIZE_SCENES, "scenes_test");
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.i("kk", ActivityManager.getInstance().getCurrentActivity().getComponentName().getClassName() + "pppp");
+                            addViewToContent(ActivityManager.getInstance().getCurrentActivity());
+                        }
+                    }, 300);
+
+                    mttRewardVideoAd = null;
+                } else {
+                    Toast.makeText(RewardVideoActivity.this, "请先加载广告", Toast.LENGTH_LONG).show();
+                }
             }
 
             //视频广告的素材加载完毕，比如视频url等，在此回调后，可以播放在线视频，网络不好可能出现加载缓冲，影响体验。
