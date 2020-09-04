@@ -35,8 +35,8 @@ public class RewardVideoActivity extends Activity {
     private Button mShowAd;
     private TTAdNative mTTAdNative;
     private TTRewardVideoAd mttRewardVideoAd;
-    private String mHorizontalCodeId = "945451520";
-    private String mVerticalCodeId = "945451487";
+    private String mHorizontalCodeId = "945457302";
+    private String mVerticalCodeId = "945457299";
     //是否请求模板广告
     private boolean mIsExpress = true;
     //视频是否加载完成

@@ -20,9 +20,9 @@ public class DemoApplication extends Application {
         //强烈建议在应用对应的Application#onCreate()方法中调用，避免出现content为null的异常
         TTAdSdk.init(this,
                 new TTAdConfig.Builder()
-                        .appId("5102407")
+                        .appId("5102993")
                         .useTextureView(true) //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView
-                        .appName("下一页")
+                        .appName("下一页广告")
                         .titleBarTheme(TTAdConstant.TITLE_BAR_THEME_DARK)
                         .allowShowNotify(true) //是否允许sdk展示通知栏提示
                         .allowShowPageWhenScreenLock(true) //是否在锁屏场景支持展示广告落地页

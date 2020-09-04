@@ -84,7 +84,7 @@ public class DrawNativeExpressVideoActivity extends Activity {
         float expressViewWidth = UIUtils.getScreenWidthDp(this);
         float expressViewHeight = UIUtils.getHeight(this);
         AdSlot adSlot = new AdSlot.Builder()
-                .setCodeId("945453275")
+                .setCodeId("945457300")
                 .setExpressViewAcceptedSize(500, 500)
                 .setSupportDeepLink(true)
                 .setExpressViewAcceptedSize(expressViewWidth, expressViewHeight) //期望模板广告view的size,单位dp
